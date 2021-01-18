@@ -12,6 +12,6 @@ Scenario: Verify Admin can open employee dashboard for adding new user
     Given I open the  Sample Portal 
 	And I click the "Add User" Button to  add user details from employee dasboard
 	And New page will open to fill  new user data 
-    And I fill following  user data '{"EmailID":"sumit@lti.com","ProfilePassword":"Newuser1233","UserRole":"Employee" }'
+    And I fill following  user data '{"EmailID":"suraj@lti.com","ProfilePassword":"Newuser1233","UserRole":"Employee" }'
     When I click on the "Add User"  button
-    Then validate "sumit@lti.com" as new  userEMailID into user details & user is created 
+    Then validate "suraj@lti.com" as new  userEMailID into user details & user is created 

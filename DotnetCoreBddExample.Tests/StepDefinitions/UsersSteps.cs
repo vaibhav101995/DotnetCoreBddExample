@@ -10,13 +10,15 @@ using Xunit;
 
 namespace DotnetCoreBddExample.Tests.StepDefinitions
 {
+
     [Binding]
-    public class UsersResourceSteps
+    public class UsersSteps : IClassFixture<WebApplicationFactory<Startup>>
+
     {
         private WebApplicationFactory<Startup> _factory;
         private HttpClient _client { get; set; }
         protected HttpResponseMessage Response { get; set; }
-        public UsersResourceSteps(WebApplicationFactory<Startup> factory)
+        public UsersSteps(WebApplicationFactory<Startup> factory)
         {
             _factory = factory;
         }
@@ -29,7 +31,7 @@ namespace DotnetCoreBddExample.Tests.StepDefinitions
                 BaseAddress = new Uri($"https://localhost:44366/")
             });
         }
-        
+
         [Given(@"I fill ""(.*)"" into  the emailID textbox && ""(.*)"" into the Password textbox")]
         public async Task GivenIFillIntoTheEmailIDTextboxIntoThePasswordTextbox(string emailID, string p1)
         {
@@ -37,7 +39,7 @@ namespace DotnetCoreBddExample.Tests.StepDefinitions
             var postRelativeUri = new Uri(resourceEndPoint, UriKind.Relative);
             Response = await _client.GetAsync(postRelativeUri).ConfigureAwait(false);
         }
-        
+
         [Given(@"I open the  Sample Portal")]
         public void GivenIOpenTheSamplePortal()
         {
