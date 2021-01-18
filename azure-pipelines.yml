@@ -30,19 +30,29 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+
+- task: VSTest@2
+  inputs:
+     testSelector: 'testAssemblies'
+     testAssemblyVer2: |
+       **\*test*.dll
+       !**\*TestAdapter.dll
+       !**\obj\**
+     searchFolder: '$(System.DefaultWorkingDirectory)'
+     vsTestVersion: '16.0'
     
 #- task: DotNetCoreCLI@2
 #  inputs:
 #    command: 'test'
     
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+#- task: VSTest@2
+#  inputs:
+#   testSelector: 'testAssemblies'
+#    testAssemblyVer2: |
+#      **\*test*.dll
+#      !**\*TestAdapter.dll
+#      !**\obj\**
+#    searchFolder: '$(System.DefaultWorkingDirectory)'
 
 #- task: ArchiveFiles@2
 #  inputs:
