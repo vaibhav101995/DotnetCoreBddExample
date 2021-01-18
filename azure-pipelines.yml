@@ -22,14 +22,14 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-#- task: MSBuild@1
-#  inputs:
-#    solution: '**/*.sln'
-#    msbuildVersion: '12.0'
- #   msbuildArchitecture: 'x64'
-- task: DotNetCoreCLI@2
+- task: MSBuild@1
   inputs:
-    command: 'build'
+    solution: '**/*.sln'
+    msbuildVersion: '12.0'
+    msbuildArchitecture: 'x64'
+#- task: DotNetCoreCLI@2
+#  inputs:
+#    command: 'build'
 
 - task: VSTest@2
   inputs:
