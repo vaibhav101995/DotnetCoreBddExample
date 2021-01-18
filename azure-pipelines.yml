@@ -24,7 +24,7 @@ steps:
     restoreSolution: '$(solution)'
 - task: MSBuild@1
   inputs:
-    solution: '**/*.sln'
+    solution: '**/*DotnetCoreBddExample.sln'
     msbuildVersion: '12.0'
     msbuildArchitecture: 'x64'
 #- task: DotNetCoreCLI@2
