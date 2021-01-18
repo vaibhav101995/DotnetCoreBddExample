@@ -10,9 +10,9 @@ Scenario: Verify user can open Employee Dashboard for showing employee details
 	And I click on the "Employee" MenuBar to show all  employee data
 	And I click the "Add" Button to  add employee details  from employee dasboard
 	And New page will open  to fill  new employee data 
-    And I fill following employee  details '{"EmployeeName":"Rahul Jais","Department":"IT","MailID":"rh@lti.com" }'
+    And I fill following employee  details '{"EmployeeName":"Anand Jais","Department":"IT","MailID":"rh@lti.com" }'
    Then I click on the Add Employee  button
-   Then validate "Rahul Jais" as a employee  name are added into employee data 
+   Then validate "Anand Jais" as a employee  name are added into employee data 
 	
 	
 	Scenario: Verify user can open employee dashboard for editing employee data 

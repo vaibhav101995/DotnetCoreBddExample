@@ -11,14 +11,13 @@ using Xunit;
 namespace DotnetCoreBddExample.Tests.StepDefinitions
 {
     [Binding]
-    public class EmployeeDashboardSteps : IClassFixture<WebApplicationFactory<Startup>>
+    public class EmpSteps : IClassFixture<WebApplicationFactory<Startup>>
 
     {
-
         private WebApplicationFactory<Startup> _factory;
         private HttpClient _client { get; set; }
         protected HttpResponseMessage Response { get; set; }
-        public EmployeeDashboardSteps(WebApplicationFactory<Startup> factory)
+        public EmpSteps(WebApplicationFactory<Startup> factory)
         {
             _factory = factory;
         }
@@ -31,7 +30,7 @@ namespace DotnetCoreBddExample.Tests.StepDefinitions
                 BaseAddress = new Uri($"https://localhost:44366/")
             });
         }
-        
+
         [Given(@"I click  the ""(.*)""  MenuBar  to show  employee details")]
         public async Task GivenIClickTheMenuBarToShowEmployeeDetails(string p0)
         {
@@ -116,12 +115,12 @@ namespace DotnetCoreBddExample.Tests.StepDefinitions
         [Then(@"I click on the Add Employee  button")]
         public void ThenIClickOnTheAddEmployeeButton()
         {
+
             int statusCode = 201;
             var expectedStatusCode = (HttpStatusCode)statusCode;
             Assert.Equal(expectedStatusCode, Response.StatusCode);
-
         }
-
+        
         [Then(@"validate ""(.*)"" as a employee  name are added into employee data")]
         public void ThenValidateAsAEmployeeNameAreAddedIntoEmployeeData(string expectedResponse)
         {
@@ -136,11 +135,11 @@ namespace DotnetCoreBddExample.Tests.StepDefinitions
             var expectedStatusCode = (HttpStatusCode)statusCode;
             Assert.Equal(expectedStatusCode, Response.StatusCode);
         }
-        
+
         [Then(@"validate ""(.*)"" as a employee name are  updated into employee data")]
-        public void ThenValidateAsAEmployeeNameAreUpdatedIntoEmployeeData(string expectedResponse)
+        public void ThenValidateAsAEmployeeNameAreUpdatedIntoEmployeeData(string p0)
         {
-            string expectedResp="Updated Successfully";
+            string expectedResp = "Updated Successfully";
             var responseData = Response.Content.ReadAsStringAsync().Result;
             Assert.Contains(expectedResp, responseData);
         }

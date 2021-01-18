@@ -115,12 +115,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 14
  testRunner.And("New page will open to fill  new user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-    testRunner.And("I fill following  user data \'{\"EmailID\":\"vijay@lti.com\",\"ProfilePassword\":\"Newuse" +
+    testRunner.And("I fill following  user data \'{\"EmailID\":\"suraj@lti.com\",\"ProfilePassword\":\"Newuse" +
                     "r1233\",\"UserRole\":\"Employee\" }\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
     testRunner.When("I click on the \"Add User\"  button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
-    testRunner.Then("validate \"vijay@lti.com\" as new  userEMailID into user details & user is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("validate \"suraj@lti.com\" as new  userEMailID into user details & user is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
