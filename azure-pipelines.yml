@@ -41,9 +41,9 @@ steps:
      searchFolder: '$(System.DefaultWorkingDirectory)'
      vsTestVersion: '16.0'
     
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
+#- task: DotNetCoreCLI@2
+#  inputs:
+#    command: 'test'
     
 #- task: VSTest@2
 #  inputs:
